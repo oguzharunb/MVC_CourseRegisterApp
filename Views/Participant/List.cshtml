@@ -1,0 +1,38 @@
+﻿
+
+<div class="card">
+
+    <div class="card-header">
+        <h2>Kursa Katılanlar</h2>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <td>İsim</td>
+                    <td>Email</td>
+                    <td>Telefon Numarası</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Pplist.participants)
+                {
+                 <tr>
+                     <td>@item.Name</td>
+                     <td>@item.Email</td>
+                     <td>@item.PhoneNumber</td>
+                 </tr>
+                }
+            </tbody>
+        </table>
+                <a class="btn btn-primary" asp-action="register">Başvuru formuna git</a>
+    </div>
+
+</div>
+
+
+
