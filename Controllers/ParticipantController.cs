@@ -13,8 +13,13 @@ namespace MVC_CourseRegisterApp.Controllers
         [HttpPost]
         public IActionResult Register(Models.Participant participant)
         {
-            Pplist.participants.Add(participant);
-            return RedirectToAction("List");
+            if (ModelState.IsValid == true)
+            {
+                Database.participants.Add(participant);
+                return RedirectToAction("List");
+            }
+            return View();
+
         }
 
         public IActionResult List()
